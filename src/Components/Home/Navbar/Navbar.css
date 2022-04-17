@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Updock&display=swap");
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+}
+.navlink a {
+  margin: 0 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+.title {
+  font-family: "Updock", cursive;
+  font-size: 60px;
+  font-weight: 500;
+}
