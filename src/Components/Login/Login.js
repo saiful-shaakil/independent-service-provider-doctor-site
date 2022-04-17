@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-800">
       <div className="bg-gray-200 w-96 h-auto rounded-lg pt-8 pb-8 px-8 flex flex-col items-center">
-        <label className="font-light text-4xl mb-4">Please Login</label>
+        <label className="font-light text-4xl mb-4">Sign In</label>
         <input
           type="text"
           className="w-full h-12 rounded-lg px-4 text-lg focus:ring-blue-600 mb-4"
