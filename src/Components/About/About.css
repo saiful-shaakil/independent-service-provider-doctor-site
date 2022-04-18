@@ -17,3 +17,21 @@
   width: 60%;
   margin-right: 100px;
 }
+@media (max-width: 650px) {
+  .about-me {
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+  }
+  .photo {
+    width: 100%;
+  }
+  .info {
+    width: 100%;
+    margin-left: 110px;
+  }
+  .image {
+    width: 150px;
+    margin-left: 40px;
+  }
+}

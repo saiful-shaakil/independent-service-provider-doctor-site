@@ -12,12 +12,11 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const [signInWithGoogle, googleUser, errorOfGoogleSign] =
     useSignInWithGoogle(auth);
-  const [sendPasswordResetEmail, sending, error] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const [signInWithEmailAndPassword, user, loading, errorOfEmailSign] =
+  const [signInWithEmailAndPassword, user, error] =
     useSignInWithEmailAndPassword(auth);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -30,11 +29,15 @@ const Login = () => {
   const userLogin = (event) => {
     if (!email || !pass) {
       toast("Please fill all the input");
-      return;
     }
-    signInWithEmailAndPassword(email, pass);
-    event.preventDefault();
+    if (email && pass) {
+      signInWithEmailAndPassword(email, pass);
+      event.preventDefault();
+    }
   };
+  if (error) {
+    toast(error);
+  }
 
   // for sign in with google
   const signInByGoogle = () => {
@@ -49,9 +52,6 @@ const Login = () => {
 
   if (user || googleUser) {
     navigate(from, { replace: true });
-  }
-  if (errorOfEmailSign || errorOfGoogleSign) {
-    toast(errorOfEmailSign, errorOfGoogleSign);
   }
   return (
     <div className="w-full mt-10 flex items-center justify-center">
@@ -75,6 +75,7 @@ const Login = () => {
         >
           Login
         </button>
+        {error}
         <button onClick={sendPassResetEmail} className="text-center mb-4">
           Forgot password?
         </button>

@@ -16,3 +16,14 @@
   display: flex;
   justify-content: center;
 }
+@media (max-width: 650px) {
+  .services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #services {
+    margin-top: -200px;
+  }
+}

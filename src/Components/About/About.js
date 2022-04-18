@@ -5,7 +5,7 @@ import "./About.css";
 const About = () => {
   return (
     <div className="each-section">
-      <div className=" h-80 mt-20 rounded-lg">
+      <div className=" mt-20 rounded-lg">
         <div className="about-me">
           <div className="photo">
             <img className="image" src={profile} alt="Profile Image" />
