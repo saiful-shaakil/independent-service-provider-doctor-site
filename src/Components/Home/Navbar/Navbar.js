@@ -4,9 +4,13 @@ import "./Navbar.css";
 import "../../Stylesheet/PublicStyleSheet.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div className="navbar each-section">
       <div className="start navlink">
@@ -22,7 +26,9 @@ const Navbar = () => {
         <Link to="/blogs">Blogs</Link>
         <Link to="about">About</Link>
         {user ? (
-          <Link to="profile">Sign Out</Link>
+          <button onClick={handleSignOut} className="text-xl">
+            Sign Out
+          </button>
         ) : (
           <Link to="login">Login</Link>
         )}

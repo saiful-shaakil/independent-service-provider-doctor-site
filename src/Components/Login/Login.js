@@ -1,14 +1,20 @@
 import "./Login.css";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -20,9 +26,17 @@ const Login = () => {
   };
   const userLogin = (event) => {
     signInWithEmailAndPassword(email, pass);
-    navigate("/");
     event.preventDefault();
   };
+
+  // for sign in with google
+  const signInByGoogle = () => {
+    signInWithGoogle();
+  };
+
+  if (user || googleUser) {
+    navigate("/");
+  }
   return (
     <div className="w-full mt-10 flex items-center justify-center">
       <div className="bg-gray-200 w-96 h-auto rounded-lg pt-2 pb-8 px-8 flex flex-col items-center">
@@ -52,9 +66,13 @@ const Login = () => {
             Register
           </Link>
         </p>
+        <ToastContainer />
 
         <label className="text-gray-800 mb-4">or</label>
-        <button className="w-full h-12 rounded-lg bg-red-600 text-gray-200 uppercase font-semibold hover:bg-red-700 text-gray-100 transition mb-4">
+        <button
+          onClick={signInByGoogle}
+          className="w-full h-12 rounded-lg bg-red-600 text-gray-200 uppercase font-semibold hover:bg-red-700 text-gray-100 transition mb-4"
+        >
           Sign with Google
         </button>
         <button className="w-full h-12 rounded-lg bg-blue-600 text-gray-200 uppercase font-semibold hover:bg-blue-700 text-gray-100 transition mb-4">
