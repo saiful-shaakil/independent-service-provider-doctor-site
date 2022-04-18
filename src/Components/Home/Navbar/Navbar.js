@@ -7,6 +7,7 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  // function for implement sign out
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
     signOut(auth);

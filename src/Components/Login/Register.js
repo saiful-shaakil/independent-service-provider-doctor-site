@@ -9,12 +9,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  // for navigating the user to another page
   const navigate = useNavigate();
+
+  // for getting the email,password,name from the form
   const formRef = useRef("");
   const checkboxRef = useRef("");
+
+  // to check he accept the condition or not
   const [agree, setAgree] = useState(false);
+
+  // for creating a user by email and password
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  // for updating the name of a user.
   const [updateProfile, updating] = useUpdateProfile(auth);
 
   // function for creating new account

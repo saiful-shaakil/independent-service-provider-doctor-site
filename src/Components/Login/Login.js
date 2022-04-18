@@ -10,14 +10,25 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  // for sign in by google
   const [signInWithGoogle, googleUser, errorOfGoogleSign] =
     useSignInWithGoogle(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+
+  // for sign in by registered email and password
   const [signInWithEmailAndPassword, user, error] =
     useSignInWithEmailAndPassword(auth);
+
+  // for sending password reset email
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  // for navigating a user where he come from this login page
+  const navigate = useNavigate();
+
+  // for getting the location where the user come from
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  // for getting the email and password, a user typed in the input section.
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const handleEmail = (event) => {
@@ -27,6 +38,7 @@ const Login = () => {
     setPass(event.target.value);
   };
 
+  // for log in a user by registered email and password
   const userLogin = (event) => {
     if (error) {
       toast("Please provide valid email and password.");
@@ -56,6 +68,7 @@ const Login = () => {
     }
   };
 
+  // navigate the user where he/she come from
   if (user || googleUser) {
     navigate(from, { replace: true });
   }
@@ -91,6 +104,7 @@ const Login = () => {
             Register
           </Link>
         </p>
+        {/* to show toast notification */}
         <ToastContainer />
 
         <label className="text-gray-800 mb-4">or</label>

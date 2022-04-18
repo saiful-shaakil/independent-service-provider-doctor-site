@@ -5,6 +5,7 @@ import Services from "../Home/Services/Services";
 
 const LandingPage = () => {
   return (
+    // this is main home page/first landing page
     <div>
       <Banner></Banner>
       <Services></Services>
