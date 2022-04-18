@@ -1,22 +1,25 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const navigate = useNavigate();
   const formRef = useRef("");
   const checkboxRef = useRef("");
   const [agree, setAgree] = useState(false);
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
 
+  // function for creating new account
   const createAccount = async () => {
+    // taking the input item from form
     const name = formRef.current.fullname.value;
     const email = formRef.current.email.value;
     const pass = formRef.current.password.value;
@@ -25,8 +28,15 @@ const Register = () => {
       toast("Your confirm password not matching");
       return;
     }
-    await createUserWithEmailAndPassword(email, pass);
-    await updateProfile({ displayName: name });
+    if (name && email && pass && confirm_pass) {
+      await createUserWithEmailAndPassword(email, pass);
+      await updateProfile({ displayName: name });
+    } else {
+      toast("Please fill the full form");
+    }
+    if (user) {
+      navigate("/login");
+    }
   };
 
   return (
