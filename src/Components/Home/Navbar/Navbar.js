@@ -14,11 +14,11 @@ const Navbar = () => {
   return (
     <div className="navbar each-section">
       <div className="start navlink">
-        <Link to="/">Home</Link>
-        <Link to="/service">Services</Link>
+        <Link to="/home">Home</Link>
+        <Link to="/services">Services</Link>
       </div>
       <div className="mid">
-        <Link className="title" to="/">
+        <Link className="title text-gray-900" to="/">
           William Dorfman
         </Link>
       </div>

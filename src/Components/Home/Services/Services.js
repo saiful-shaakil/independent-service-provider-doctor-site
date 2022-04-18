@@ -11,7 +11,7 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="each-section text-center mt-8">
+    <div className="each-section text-center mt-8" id="services">
       <h1 className="text-5xl mt-16">
         My <span className="text-gray-700">Dental Services</span>
       </h1>
