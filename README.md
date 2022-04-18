@@ -1,3 +1,23 @@
+## Live Website Link
+
+[Here](https://independent-service-prov-2885e.web.app)
+
+## What I did in this web site
+
+1. This is a website about a single dentist who provides services to the people.
+2. This website has one navbar, one footer and 3 section.
+3. Navbar container 6 links includes home,services,logo,blogs,about and login.
+4. Registration with email is implemented in this website.
+5. Login with email and google is implemented in this websie.
+
+## Library and Framework I used in this website
+
+1. React Js
+2. Tailwind Css
+3. firebase
+4. react firebase hooks &
+5. react toastify
+
 ## Available Scripts
 
 In the project directory, you can run:
