@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "../../Stylesheet/PublicStyleSheet.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <div className="navbar each-section">
       <div className="start navlink">
@@ -12,13 +15,17 @@ const Navbar = () => {
       </div>
       <div className="mid">
         <Link className="title" to="/">
-          Mark Manson
+          William Dorfman
         </Link>
       </div>
       <div className="end navlink">
         <Link to="/blogs">Blogs</Link>
         <Link to="about">About</Link>
-        <Link to="login">Login</Link>
+        {user ? (
+          <Link to="profile">Sign Out</Link>
+        ) : (
+          <Link to="login">Login</Link>
+        )}
       </div>
     </div>
   );

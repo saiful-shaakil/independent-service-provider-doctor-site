@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Updock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -10,6 +11,7 @@
   margin: 0 10px;
   padding: 20px;
   font-size: 20px;
+  font-family: "Roboto", sans-serif;
 }
 .title {
   font-family: "Updock", cursive;
