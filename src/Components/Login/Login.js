@@ -48,8 +48,12 @@ const Login = () => {
 
   // for password reset email
   const sendPassResetEmail = async () => {
-    await sendPasswordResetEmail(email);
-    toast("Password Reset Email Sent");
+    if (!email.includes(".com")) {
+      toast("Please enter a valid email address");
+    } else {
+      await sendPasswordResetEmail(email);
+      toast("Password Reset Email Sent");
+    }
   };
 
   if (user || googleUser) {
