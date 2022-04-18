@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -11,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const [signInWithGoogle, googleUser, errorOfGoogleSign] =
     useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -36,6 +39,12 @@ const Login = () => {
   // for sign in with google
   const signInByGoogle = () => {
     signInWithGoogle();
+  };
+
+  // for password reset email
+  const sendPassResetEmail = async () => {
+    await sendPasswordResetEmail(email);
+    toast("Password Reset Email Sent");
   };
 
   if (user || googleUser) {
@@ -66,7 +75,9 @@ const Login = () => {
         >
           Login
         </button>
-        <p className="text-center mb-4">Forgot password?</p>
+        <button onClick={sendPassResetEmail} className="text-center mb-4">
+          Forgot password?
+        </button>
         <p className="text-center mb-4">
           New to my site?{" "}
           <Link to="/register" className="text-blue-500">
