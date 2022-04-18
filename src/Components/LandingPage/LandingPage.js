@@ -1,12 +1,12 @@
 import React from "react";
 import Banner from "../Home/Banner/Banner";
-import Introduction from "../Home/Introduction/Introduction";
+import Services from "../Home/Services/Services";
 
 const LandingPage = () => {
   return (
     <div>
       <Banner></Banner>
-      <Introduction></Introduction>
+      <Services></Services>
     </div>
   );
 };

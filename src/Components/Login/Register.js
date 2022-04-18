@@ -43,7 +43,7 @@ const Register = () => {
     <div className="flex mt-10 flex-col">
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-gray-200 px-6 py-4 rounded-lg shadow-md text-black w-full">
-          <h1 className="mb-8 text-3xl text-center">Sign up</h1>
+          <h1 className="mb-8 text-3xl text-center">Sign Up</h1>
           <form ref={formRef}>
             <input
               type="text"

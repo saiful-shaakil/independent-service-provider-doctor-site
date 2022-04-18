@@ -1,4 +1,3 @@
-import "./Login.css";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -10,11 +9,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, errorOfGoogleSign] =
+    useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const [signInWithEmailAndPassword, user, loading] =
+  const [signInWithEmailAndPassword, user, loading, errorOfEmailSign] =
     useSignInWithEmailAndPassword(auth);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -25,6 +25,10 @@ const Login = () => {
     setPass(event.target.value);
   };
   const userLogin = (event) => {
+    if (!email || !pass) {
+      toast("Please fill all the input");
+      return;
+    }
     signInWithEmailAndPassword(email, pass);
     event.preventDefault();
   };
@@ -36,6 +40,9 @@ const Login = () => {
 
   if (user || googleUser) {
     navigate(from, { replace: true });
+  }
+  if (errorOfEmailSign || errorOfGoogleSign) {
+    toast(errorOfEmailSign, errorOfGoogleSign);
   }
   return (
     <div className="w-full mt-10 flex items-center justify-center">

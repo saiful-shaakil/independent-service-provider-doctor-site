@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "General Dentistry",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/hR2WSsJ/picture-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Orthodontist",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/ZJHKDpq/picture-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Preventive Dentistry",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/fQvQ7ts/picture-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Family Dentistry",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/hR2WSsJ/picture-1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Sergical Dentistry",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/ZJHKDpq/picture-2.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cosmetic Dentistry",
+    "description": "Dentistry, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.",
+    "img": "https://i.ibb.co/fQvQ7ts/picture-3.jpg"
+  }
+]
