@@ -26,19 +26,21 @@ const Login = () => {
   const handlePass = (event) => {
     setPass(event.target.value);
   };
+
   const userLogin = (event) => {
+    if (error) {
+      toast("Please provide valid email and password.");
+      return;
+    }
     if (!email || !pass) {
       toast("Please fill all the input");
+      return;
     }
     if (email && pass) {
       signInWithEmailAndPassword(email, pass);
-      event.preventDefault();
     }
+    event.preventDefault();
   };
-  if (error) {
-    toast(error);
-  }
-
   // for sign in with google
   const signInByGoogle = () => {
     signInWithGoogle();
