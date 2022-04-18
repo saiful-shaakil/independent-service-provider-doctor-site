@@ -12,3 +12,7 @@
   width: 100%;
   height: 350px;
 }
+.booking {
+  display: flex;
+  justify-content: center;
+}

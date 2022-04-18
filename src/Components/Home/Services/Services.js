@@ -13,7 +13,7 @@ const Services = () => {
   return (
     <div className="each-section text-center mt-8">
       <h1 className="text-5xl mt-16">
-        My <span className="text-green-300">Dental Services</span>
+        My <span className="text-gray-700">Dental Services</span>
       </h1>
       <p className="text-2xl mt-5">
         I am always happy to provide you my best services

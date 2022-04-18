@@ -1,5 +1,4 @@
 import React from "react";
-import "../../Stylesheet/PublicStyleSheet.css";
 
 const Footer = () => {
   return (

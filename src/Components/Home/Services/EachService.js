@@ -10,7 +10,7 @@ const EachService = ({ service }) => {
       <br />
       <h1 className="text-3xl">{name}</h1>
       <Link to="booking">
-        <button className="w-full h-12 rounded-lg bg-green-400 text-gray-200 uppercase font-semibold hover:bg-green-700 text-gray-100 transition mt-4">
+        <button className="w-full h-12 rounded-lg bg-gray-400 text-gray-200 uppercase font-semibold hover:bg-gray-900 text-gray-100 transition mt-4">
           Book Now
         </button>
       </Link>

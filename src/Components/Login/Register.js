@@ -90,7 +90,7 @@ const Register = () => {
             onClick={createAccount}
             type="submit"
             className={`"w-full text-center py-3 rounded  text-gray-200  hover:bg-green-dark focus:outline-none my-1" ${
-              agree ? "bg-blue-600 w-full" : "bg-gray-600 w-full"
+              agree ? "bg-gray-900 w-full" : "bg-gray-500 w-full"
             } `}
           >
             Create Account

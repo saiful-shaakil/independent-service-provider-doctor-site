@@ -1,8 +1,9 @@
 import React from "react";
+import "./service.css";
 
 const Booking = () => {
   return (
-    <div className="w-full my-auto">
+    <div className="booking">
       <div className="leading-loose">
         <form className="max-w-xl m-4 p-10 bg-white rounded shadow-xl">
           <p className="text-gray-800 font-medium">Customer information</p>
@@ -116,10 +117,10 @@ const Booking = () => {
           </div>
           <div className="mt-4">
             <button
-              className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+              className="px-4 py-1 text-white font-light tracking-wider w-full bg-gray-900 rounded"
               type="submit"
             >
-              $3.00
+              Checkout
             </button>
           </div>
         </form>
